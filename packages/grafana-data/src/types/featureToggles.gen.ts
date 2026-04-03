@@ -134,11 +134,6 @@ export interface FeatureToggles {
   */
   faroSessionReplay?: boolean;
   /**
-  * A table visualisation for logs in Explore
-  * @default true
-  */
-  logsExploreTableVisualisation?: boolean;
-  /**
   * Store query history in browser IndexedDB instead of server-side
   * @default false
   */
