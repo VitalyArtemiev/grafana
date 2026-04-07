@@ -42,6 +42,7 @@ describe('when useMTPlugins flag is enabled', () => {
       logWarning: jest.fn(),
     };
     setPluginMetaLogger(logger);
+    (window as unknown as Record<string, unknown>).__grafana_public_path__ = '';
   });
 
   afterAll(() => {
