@@ -40,7 +40,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi v1.26.6 // @grafana/data-sources-plugins
 	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.40.1 // @grafana/grafana-operator-experience-squad
 	github.com/aws/aws-sdk-go-v2/service/sts v1.41.6 // @grafana/grafana-operator-experience-squad
-	github.com/aws/smithy-go v1.24.0 // @grafana/data-sources-plugins
+	github.com/aws/smithy-go v1.24.2 // @grafana/data-sources-plugins
 	github.com/beevik/etree v1.6.0 // @grafana/grafana-backend-group
 	github.com/benbjohnson/clock v1.3.5 // @grafana/alerting-backend
 	github.com/blevesearch/bleve/v2 v2.5.7 // @grafana/grafana-search-and-storage
@@ -349,7 +349,7 @@ require (
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/at-wat/mqtt-go v0.19.6 // indirect
-	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.7.3 // indirect
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.7.8 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.32.7 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.18.17 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/s3/manager v1.20.3 // indirect
