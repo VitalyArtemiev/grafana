@@ -3047,6 +3047,15 @@ var (
 			Owner:       grafanaFrontendPlatformSquad,
 			Expression:  "false",
 		},
+		{
+			Name:         "alertingRulesAPIV2",
+			Description:  "Enables the new Rules API v2 UI with evaluation chains and groupless rule creation",
+			Stage:        FeatureStageExperimental,
+			Owner:        grafanaAlertingSquad,
+			HideFromDocs: true,
+			Expression:   "false",
+			Generate:     Generate{LegacyGo: true, LegacyFrontend: true},
+		},
 		// tl;dr: name your new flag `component.featureName`, specify Go and/or React generation targets, and use with OpenFeature!
 		//
 		// Adding a new feature flag? Be sure to check out the updated docs at /contribute/feature-toggles.md#Steps-to-adding-a-feature-toggle
