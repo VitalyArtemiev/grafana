@@ -327,23 +327,22 @@ func (f *RuleStore) ListAlertRules(_ context.Context, q *models.ListAlertRulesQu
 }
 
 func (f *RuleStore) listAlertRules(q *models.ListAlertRulesQuery) (models.RulesGroup, error) {
-	hasDashboard := func(r *models.AlertRule, dashboardUID string, panelID int64) bool {
-		if dashboardUID != "" {
-			if r.DashboardUID == nil || *r.DashboardUID != dashboardUID {
-				return false
-			}
-			if panelID > 0 {
-				if r.PanelID == nil || *r.PanelID != panelID {
-					return false
-				}
-			}
-		}
-		return true
-	}
-
 	ruleList := models.RulesGroup{}
 	for _, r := range f.Rules[q.OrgID] {
-		if !hasDashboard(r, q.DashboardUID, q.PanelID) {
+		if q.DashboardUID != "" {
+			if r.DashboardUID == nil || *r.DashboardUID != q.DashboardUID {
+				continue
+			}
+		}
+		if q.PanelID != 0 {
+			if r.PanelID == nil || *r.PanelID != q.PanelID {
+				continue
+			}
+		}
+		if q.IsPaused != nil && r.IsPaused != *q.IsPaused {
+			continue
+		}
+		if q.TitleExact != "" && r.Title != q.TitleExact {
 			continue
 		}
 		if len(q.NamespaceUIDs) > 0 && !slices.Contains(q.NamespaceUIDs, r.NamespaceUID) {
