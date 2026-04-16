@@ -326,6 +326,7 @@ func (f *RuleStore) ListAlertRules(_ context.Context, q *models.ListAlertRulesQu
 	return f.listAlertRules(q)
 }
 
+//nolint:gocyclo // this function is intentionally not split to keep the logic in one place, making it easier to maintain the filtering logic in tests
 func (f *RuleStore) listAlertRules(q *models.ListAlertRulesQuery) (models.RulesGroup, error) {
 	ruleList := models.RulesGroup{}
 	for _, r := range f.Rules[q.OrgID] {
